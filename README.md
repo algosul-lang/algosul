@@ -9,7 +9,7 @@
 #[start]
 fn main() {
     let number = box 1; // let number: i32.Box = box 1;
-	println!("{*number}"); // output `1` and newline
+    println!("{*number}"); // output `1` and newline
 }
 ```
 
