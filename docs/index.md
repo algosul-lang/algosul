@@ -30,7 +30,7 @@ fn start_function_return_result_int() -> Result<c_int, ()> { Ok(0) }
 ### Buildin Type
 
 |    type \ bit    |   8    |  16   |   32   |  64   |  128   | bits(32\|64) |
-| :--------------: | :----: | :---: | :----: | :---: | :----: | :----------: |
+|:----------------:|:------:|:-----:|:------:|:-----:|:------:|:------------:|
 |     integer      |  `i8`  | `i16` | `i32`  | `i64` | `i128` |   `isize`    |
 | unsigned integer |  `u8`  | `u16` | `u32`  | `u64` | `u128` |   `usize`    |
 |   float number   |   \    | `f16` | `f32`  | `f64` | `f128` |      \       |
@@ -42,7 +42,7 @@ fn start_function_return_result_int() -> Result<c_int, ()> { Ok(0) }
 |   mutable ref    |   \    |   \   |   \    |   \   |   \    |   `&mut T`   |
 
 |     type      |           define           |                            size                             |
-| :-----------: | :------------------------: | :---------------------------------------------------------: |
+|:-------------:|:--------------------------:|:-----------------------------------------------------------:|
 | dynamic array |         `arr: [T]`         |                `size_of::<T>() * arr.len()`                 |
 | static array  |      `arr: [T; len]`       |                   `size_of::<T>() * len`                    |
 |  empty tuple  |        `tuple: ()`         |                             `0`                             |
@@ -52,14 +52,14 @@ fn start_function_return_result_int() -> Result<c_int, ()> { Ok(0) }
 ### C Type
 
 | type \ size |    0     |   byte    |   wide    | short / 16 bits | int / 32 bits |   long    |   long long    |
-| :---------: | :------: | :-------: | :-------: | :-------------: | :-----------: | :-------: | :------------: |
+|:-----------:|:--------:|:---------:|:---------:|:---------------:|:-------------:|:---------:|:--------------:|
 |   signed    |          | `c_schar` |           |    `c_short`    |    `c_int`    | `c_long`  | `c_long_long`  |
 |  unsigned   |          | `c_uchar` |           |   `c_ushort`    |   `c_uint`    | `c_ulong` | `c_ulong_long` |
 |    char     |          | `c_char`  | `c_wchar` |   `c_char16`    |  `c_char32`   |           |                |
 |    void     | `c_void` |           |           |                 |               |           |                |
 
 |     type     |   float   |   double   |   long double   |
-| :----------: | :-------: | :--------: | :-------------: |
+|:------------:|:---------:|:----------:|:---------------:|
 | float number | `c_float` | `c_double` | `c_long_double` |
 
 ## Module
@@ -75,7 +75,7 @@ fn start_function_return_result_int() -> Result<c_int, ()> { Ok(0) }
 >
 > `module_exsample/`
 >
-> >`module.aau`
+> > `module.aau`
 > >
 > >`pri_module.aau`
 
@@ -106,8 +106,8 @@ fn function(arg1: T1, arg2: T2, ...) -> ResultType {
 
 ### Call
 
-```rust
-let result = function(param1, param2, ...);
+```no_run
+let result = function(param1, param2,...);
 ```
 
 ## Export
@@ -225,7 +225,7 @@ export auto main() -> int {
 ```rust
 // rust edition 2024
 #![no_std]
-use ::annasul_lang::std::prelude::*;
+use ::algosul_lang::std::prelude::*;
 fn main() {
     println("Hello AAU!");
 }
@@ -236,7 +236,7 @@ fn main() {
 ```c#
 // .net 9.0
 namespace CallAAU;
-using AnnasulLang.std as AAU;
+using AlgosulLang.std as AAU;
 public class Program {
     static void Main(string[] args) {
         AAU.println("Hello AAU!");
